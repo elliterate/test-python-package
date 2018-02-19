@@ -1,5 +1,6 @@
 language: python
 dist: trusty
+
 matrix:
   include:
   - python: 2.7
@@ -12,3 +13,13 @@ install:
 - pip install tox
 script: tox
 cache: pip
+deploy:
+  provider: pypi
+  server: https://test.pypi.org/legacy/
+  user:
+    secure: uAc9geKQQNjLWcSWKcmn4NxVP7cCSlXI0IKcVy2xzu7uQ+9EnnGDIAYGz/XKCj4e4H/I5r2WzZWxAVhrI9rkUvarYk4gap8iBLuSG6iW3WU5BKtpnakNfc+jyizKFXyVvriG1CqJg8EEcVr8udJSQEYXIPymBogAY3ogpPC0GPAFp+eQSwvqTtUCyJ07Oc4vIrVktcyGRNGDXbsV6v0AubaO3mZfsv+21d+SVF++26aQba9MHr9GDcpIPeYiq3/QWYHq2O/usEHx88IcVTQoTUKpKLd0bSO7TnR9HgZ6FWllJ/FfV4ufvN4Hab9B4pUs/lRvq3mqMCBCBPmv6HP4v6tspKO/uJsU/NToygfCasKzsuMg85APqJeOZ3v4vyd3bE6D3TPRkh9mmg0iNfspHnfzCjVAZrb8wf2jhauqjTgUjkeFHNf4cziApwgEjB18jYuabkNJzD/TAPKjjzH0dfUxYvVfmXnxqwlclF3F7A3zaXuB5kvqQy4WTxmS5jdseXMtUJ1PLSrEAyn35Yje3k9k9zem3m6LvyXXyIqbIP1oexQ3Ypfna1dfeZNEBjm2hxQxOaTMt0z0SEINKu15I96KOSwNHdcap0N45KjqQ0flbhObk4VPrefEPZtChWopKnVQ0fYpN0sF9SP8DIfna2nIAd/3BoJK3b77QYgLTQc=
+  password:
+    secure: epJsl1wbgEyNBI6tMOTXOR3tvEoDc1g4h8ezCu0ksKuPZpTFirwAWP2b6JWy21N7zJM7yQNaiQSAdcBAqFpn0V0S7io2zoD9SJnq2y3v3ZzRGBMTIDe86kO1GObuwWTmP7XgT5C6Gb6EenlGrTB30Kw8SaSzzMHQj+0h2j4PFFUw+NMYJYmGHuzBcX1Y37kn7p0HY0oge6vZR2b9eHC24pNYXZvQE2ImC+KXfI8knUUmiO3TgtIjEKlu1sueyUrAlD94kaLGI+yUYKS3DSKW+Xr9amVpFIIPFin/zpHOVJYWOYXo2AXjg3w2HL5Ginw3sKU/TuFuGZyt1AzVRoE6U+OpipU4mgtNmQliPujWwQzUCBrrGn9zf8RxGXinlyU+HZa+7gt5YS6jOzC3OOlsAdwX4HRxd3Sh6PkfAlkAsgXQ4uSy5jqdEsqz+4D6yNO/DswDIkQJRLOq4A9yg0a6Zvp8pFqW7RWAf9oXbVQh2h9iqHLg9mLfyaXm2mEkocjZFh2x6myT5wEY8HEyfpPc2MtDMNg8kwTMczm+5G/J2xQH+pLuTtmepixaCZhFm1BCEZaZJStiBmVr6iKj+4BFHD61JogxJGJT3DyvIxfqlrc6sVK7fA2vAUj6HHCsThUq78kUmelPdwgMljoI7hJ28Jf7+q3XWA2PtZgKXgbXumc=
+  on:
+    tags: true
+    python: 3.5
