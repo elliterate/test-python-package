@@ -49,4 +49,5 @@ setup(
     install_requires=[],
     setup_requires=["pytest-runner"],
     tests_require=[],
-    extras_require={})
+    extras_require={
+        "development": ["bumpversion"]})
