@@ -13,7 +13,7 @@ install:
 script: tox
 cache: pip
 before_deploy:
-- (cd docs && make clean && make html)
+- pip install Sphinx && (cd docs && make clean && make html)
 deploy:
 - provider: pypi
   server: https://test.pypi.org/legacy/
