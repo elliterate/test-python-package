@@ -12,6 +12,8 @@ install:
 - pip install tox
 script: tox
 cache: pip
+before_deploy:
+- (cd docs && make clean && make html)
 deploy:
 - provider: pypi
   server: https://test.pypi.org/legacy/
@@ -27,6 +29,7 @@ deploy:
   github-token:
     secure: vlVQp3rXjqDNmWmQlCdgi6ha3MqAyPvB99KyVqm26b5OOBYFdi5pe5P4qE4yTbSWsHrfLwf2WhXk7e43pPZMaqktGJ6TPF+dvP9OTV13NSidYEc9SP2P9GK3dYaZZappI+4tCH+FGesxXDLMLCuB7B7bHp56SoJjdGE1BeMBqO5K9mGTmwAj377PxntOcBeUBQojvX9b1w295pyfgxaz/1ktQ2RX1pWIzuoDaPDjrqe/cyWXpSwkFymc88omruYJz+PSaxVL1FezbAPxYxF6gjj0LqT67GbsCK7Swt39QY/fgfKfDoqBva3N4Q0PF+OTx9a0yrJwKeq0WKHCFEPdPG48booGcC8o9RLFbxZ910k1M6Mi3y2jLyVo6r2jX2z3AVBGwzB4ZWp1fd22Sa8DiMAbU7bo0R2aZyhccPQ+5VK5XkaLlHE00ZEas3I/VZcI9U2nB1SkF4AxYB+ABFIEt+ybW0LlU2bxaKdg5nMNe4Ze8rEwNN2LKLtefy6SBcEPzYxjmUWxKh7B46HOFqEmkmW8gztnDDKbsI4CZ9ilJeybKGS7lHJptDKPQ/OuSheoG6tFiWlsstaFzH5aOLri90ObAnz/ySr0wIUQtDh3et4pVscEY3NsHIYXdd5sABALYcmqIJMuT+GHut5q2MbkePpANxA5zh7lT3F3fpLXDw8=
   keep-history: true
+  local-dir: docs/build/html/
   on:
     tags: true
     python: 3.5
