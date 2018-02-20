@@ -1,1 +1,1 @@
-from __version__ import __version__
+from test_python_package.__version__ import __version__
