@@ -31,5 +31,4 @@ deploy:
   keep-history: true
   local-dir: docs/build/html/
   on:
-    tags: true
     python: 3.5
